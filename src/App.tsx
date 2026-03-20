@@ -4,7 +4,7 @@ import { RouterProvider } from "react-router/dom";
 const router = createBrowserRouter([
 	{
 		path: "/",
-		element: <div className="text-red-500">Hello World</div>,
+		element: <div className="text-teste">Hello World</div>,
 	},
 ]);
 
