@@ -1,0 +1,14 @@
+{
+	"Tasks": [
+		{
+			"id": "1",
+			"title": "a title",
+			"content": "a content",
+			"status": "todo",
+			"deadline": "14-01-2027",
+			"responsible": "Michael",
+			"isLate": true,
+			"completedAt": "22-05-2026"
+		}
+	]
+}
