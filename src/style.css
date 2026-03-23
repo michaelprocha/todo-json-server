@@ -18,4 +18,16 @@
     --color-zinc: #CFD1D5;
     --color-white-light: #F9FAFB;
     --color-white: #ffffff;
+
+    --font-*: initial;
+    --font-inter: 'Inter Variable', sans-serif;
+    --font-roboto: 'Roboto Variable', sans-serif;
+
+    --text-*: initial;
+    --text-xs: 0.625rem;
+    --text-sm: 1rem;
+    --text-base: 1rem;
+    --text-lg: 1.25rem;
+    --text-xl: 2.25rem;
 }
+
