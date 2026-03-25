@@ -5,6 +5,7 @@ import Icon from "./components/Icon";
 import Button from "./components/Button";
 import Plus from "./assets/icons/add.svg?react";
 import Search from "./components/Search";
+import Amount from "./components/Amount";
 
 const router = createBrowserRouter([
 	{
@@ -31,6 +32,12 @@ const router = createBrowserRouter([
 				<div>
 					search
 					<Search name="search" id="123" color="primary" placeholder="Search tasks..." />
+				</div>
+				<div className="h-30 w-30">
+					amount
+					<Amount>5</Amount>
+					<Amount color="secondary">3</Amount>
+					<Amount color="primary">4</Amount>
 				</div>
 			</>
 		),
