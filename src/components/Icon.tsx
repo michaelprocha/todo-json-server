@@ -3,12 +3,10 @@ import type { FC, SVGProps } from "react";
 // Definimos o tipo das props: aceita um "SvgComponent" e as props normais de SVG
 interface IconProps extends SVGProps<SVGSVGElement> {
 	// Aqui você usa a assinatura de um componente React que renderiza SVG
-	component: FC<SVGProps<SVGSVGElement>>;
-	fill: string;
-	className: string;
+	svg: FC<SVGProps<SVGSVGElement>>;
 }
 
-const Icon = ({ component: SvgComponent, fill = "#000000", className, ...props }: IconProps) => {
+const Icon = ({ svg: SvgComponent, fill = "#000000", className, ...props }: IconProps) => {
 	return (
 		<SvgComponent
 			fill={fill}
