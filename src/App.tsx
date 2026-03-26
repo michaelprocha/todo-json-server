@@ -6,6 +6,7 @@ import Button from "./components/Button";
 import Plus from "./assets/icons/add.svg?react";
 import Search from "./components/Search";
 import Amount from "./components/Amount";
+import DescGroupCardText from "./components/DescGroupCardText";
 
 const router = createBrowserRouter([
 	{
@@ -38,6 +39,11 @@ const router = createBrowserRouter([
 					<Amount>5</Amount>
 					<Amount color="secondary">3</Amount>
 					<Amount color="primary">4</Amount>
+				</div>
+				<div>
+					<DescGroupCardText color="primary">todo</DescGroupCardText>
+					<DescGroupCardText color="secondary">in progress</DescGroupCardText>
+					<DescGroupCardText color="tertiary">done</DescGroupCardText>
 				</div>
 			</>
 		),
