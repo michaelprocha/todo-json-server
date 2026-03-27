@@ -8,6 +8,7 @@ import Search from "./components/Search";
 import Amount from "./components/Amount";
 import DescGroupCardText from "./components/DescGroupCardText";
 import DescGroup from "./components/DescGroup";
+import TagCard from "./components/TagCard";
 
 const router = createBrowserRouter([
 	{
@@ -56,6 +57,12 @@ const router = createBrowserRouter([
 					<DescGroup color="tertiary" numbers="1">
 						done
 					</DescGroup>
+				</div>
+				<div className="flex flex-col gap-4 p-4">
+					<TagCard>todo</TagCard>
+					<TagCard color="secondary">in progress</TagCard>
+					<TagCard color="tertiary">done</TagCard>
+					<TagCard color="complementary">expired</TagCard>
 				</div>
 			</>
 		),
