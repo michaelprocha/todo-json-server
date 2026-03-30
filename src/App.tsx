@@ -10,6 +10,7 @@ import DescGroupCardText from "./components/DescGroupCardText";
 import DescGroup from "./components/DescGroup";
 import TagCard from "./components/TagCard";
 import Link from "./components/Link";
+import Card from "./components/Card";
 
 const router = createBrowserRouter([
 	{
@@ -74,6 +75,16 @@ const router = createBrowserRouter([
 				<Link color="tertiary" svg={TrashIcon}>
 					teste
 				</Link>
+				<div className="p-8">
+					<Card
+						tags={["todo", "expired"]}
+						title="teste"
+						content="teste-content"
+						createdAt="2025-12-01"
+						deadline="2025-12-10"
+						responsable="Michael Rocha"
+					></Card>
+				</div>
 			</>
 		),
 	},
