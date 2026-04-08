@@ -1,5 +1,6 @@
 import { tv, type VariantProps } from "tailwind-variants";
 import { twMerge } from "tailwind-merge";
+import type { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
 
 type TypeText =
 	| "h1"
@@ -19,7 +20,6 @@ type TypeText =
 	| "small"
 	| "mark"
 	| "abbr"
-	| "a"
 	| "code"
 	| "time"
 	| "label"
@@ -68,14 +68,13 @@ const textVariants = tv({
 	},
 });
 
-type TextProps = VariantProps<typeof textVariants> & {
-	as: TypeText;
-	children: string;
-	className: string;
-};
+type TextProps<T extends TypeText> = VariantProps<typeof textVariants> & {
+	as?: T;
+	children: ReactNode;
+} & Omit<ComponentPropsWithoutRef<T>, keyof VariantProps<typeof textVariants> | "as">;
 
-function Text({
-	as = "span",
+function Text<T extends TypeText = "span">({
+	as,
 	color,
 	size,
 	font,
@@ -83,10 +82,10 @@ function Text({
 	lineHeight,
 	letterSpacing,
 	className,
-	children = "",
+	children,
 	...props
-}: TextProps) {
-	const Text = as;
+}: TextProps<T>) {
+	const Text = (as || "span") as ElementType;
 	return (
 		<Text className={twMerge(textVariants({ color, size, font, weight, lineHeight, letterSpacing, className }))} {...props}>
 			{children}
