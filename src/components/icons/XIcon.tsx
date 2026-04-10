@@ -5,14 +5,14 @@ import { tv, type VariantProps } from "tailwind-variants";
 const plusIconVariants = tv({
 	variants: {
 		color: {
-			blueDark: "text-blue-dark",
+			grey: "text-grey",
 		},
 		size: {
-			md: "size-4",
+			md: "size-3",
 		},
 	},
 	defaultVariants: {
-		color: "blueDark",
+		color: "grey",
 		size: "md",
 	},
 });
@@ -25,13 +25,13 @@ type PlusIconProps = VariantProps<typeof plusIconVariants> &
 function PlusIcon({ color, size, className, ...props }: PlusIconProps) {
 	return (
 		<svg
-			viewBox="0 0 16 16"
+			viewBox="0 0 12 12"
 			fill="currentColor"
 			xmlns="http://www.w3.org/2000/svg"
 			className={twMerge(plusIconVariants({ color, size }), className)}
 			{...props}
 		>
-			<path d="M6.275 9.425H0V6.275H6.275V0H9.425V6.275H15.7V9.425H9.425V15.7H6.275V9.425Z" />
+			<path d="M1.16667 11.6667L0 10.5L4.66667 5.83333L0 1.16667L1.16667 0L5.83333 4.66667L10.5 0L11.6667 1.16667L7 5.83333L11.6667 10.5L10.5 11.6667L5.83333 7L1.16667 11.6667Z" />
 		</svg>
 	);
 }

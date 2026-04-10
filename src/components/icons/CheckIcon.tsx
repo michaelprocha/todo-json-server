@@ -18,9 +18,9 @@ const checkIconVariants = tv({
 });
 
 type CheckIconProps = VariantProps<typeof checkIconVariants> &
-	SVGProps<SVGSVGElement> & {
+	Omit<SVGProps<SVGSVGElement>, keyof VariantProps<typeof checkIconVariants>> & {
 		className?: string;
-	} & Omit<SVGProps<SVGSVGElement>, keyof VariantProps<typeof checkIconVariants>>;
+	};
 
 function CheckIcon({ color, size, className, ...props }: CheckIconProps) {
 	return (
