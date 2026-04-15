@@ -8,7 +8,7 @@ const checkIconVariants = tv({
 			white: "text-white",
 		},
 		size: {
-			sm: "size-2",
+			sm: "size-3",
 		},
 	},
 	defaultVariants: {
