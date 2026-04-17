@@ -22,7 +22,7 @@ type PlusIconProps = VariantProps<typeof plusIconVariants> &
 		className?: string;
 	};
 
-function PlusIcon({ color, size, className, ...props }: PlusIconProps) {
+function XIcon({ color, size, className, ...props }: PlusIconProps) {
 	return (
 		<svg
 			viewBox="0 0 12 12"
@@ -36,4 +36,4 @@ function PlusIcon({ color, size, className, ...props }: PlusIconProps) {
 	);
 }
 
-export default PlusIcon;
+export default XIcon;
