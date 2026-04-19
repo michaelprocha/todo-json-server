@@ -4,33 +4,46 @@ import type { ComponentProps } from "react";
 import { twMerge } from "tailwind-merge";
 
 const addButtonVariant = tv({
-	base: `flex items-center justify-center rounded-2xl cursor-pointer`,
-	variants: {
-		color: {
-			primary: "bg-white",
-		},
-		size: {
-			md: "h-8 w-8",
-		},
-	},
-	defaultVariants: {
-		color: "primary",
-		size: "md",
-	},
+    base: `flex items-center justify-center rounded-2xl cursor-pointer`,
+    variants: {
+        color: {
+            primary: "bg-white",
+        },
+        size: {
+            md: "h-8 w-8",
+        },
+    },
+    defaultVariants: {
+        color: "primary",
+        size: "md",
+    },
 });
 
-type AddButtonProps = Omit<ComponentProps<"button">, keyof VariantProps<typeof addButtonVariant>> &
-	VariantProps<typeof addButtonVariant> & {
-		iconColor?: ComponentProps<typeof PlusIcon>["color"];
-		iconSize?: ComponentProps<typeof PlusIcon>["size"];
-	};
+type AddButtonProps = Omit<
+    ComponentProps<"button">,
+    keyof VariantProps<typeof addButtonVariant>
+>
+    & VariantProps<typeof addButtonVariant> & {
+        iconColor?: ComponentProps<typeof PlusIcon>["color"];
+        iconSize?: ComponentProps<typeof PlusIcon>["size"];
+    };
 
-function AddButton({ color, size, className, iconColor, iconSize, ...props }: AddButtonProps) {
-	return (
-		<button className={twMerge(addButtonVariant({ color, size }), className)} {...props}>
-			<PlusIcon color={iconColor} size={iconSize} />
-		</button>
-	);
+function AddButton({
+    color,
+    size,
+    className,
+    iconColor,
+    iconSize,
+    ...props
+}: AddButtonProps) {
+    return (
+        <button
+            className={twMerge(addButtonVariant({ color, size }), className)}
+            {...props}
+        >
+            <PlusIcon color={iconColor} size={iconSize} />
+        </button>
+    );
 }
 
 export default AddButton;
