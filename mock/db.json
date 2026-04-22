@@ -1,1 +1,20 @@
-{ "users": [{ "name": "Michael", "age": 29 }] }
+{
+  "tasks": [
+    {
+      "content": "teste1Edit",
+      "completed": false,
+      "id": "9H00SDDnBlg"
+    },
+    {
+      "content": "teste2",
+      "completed": false,
+      "id": "aOyfKeUSXZc"
+    },
+    {
+      "content": "teste3",
+      "completed": true,
+      "id": "krblB9fsBj4"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
