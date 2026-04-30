@@ -4,7 +4,6 @@ import { tv, type VariantProps } from "tailwind-variants";
 import CheckBox from "./CheckBox";
 import XIcon from "./icons/XIcon";
 import Text from "./Text";
-import useTask from "../hooks/useTask";
 
 const taskVariants = tv({
   base: `min-h-13 w-full flex items-center rounded-xl px-4`,
@@ -26,9 +25,15 @@ type TaskProps = Omit<
     idTask: string;
     completed: boolean;
     children?: string;
+    isPading: boolean;
+    handleDelete: () => void;
+    handleCompleted: () => void;
   };
 
 function Task({
+  isPading,
+  handleCompleted,
+  handleDelete,
   completed,
   idTask,
   children = "",
@@ -36,11 +41,6 @@ function Task({
   className,
   ...props
 }: TaskProps) {
-  const { task, handleCompleted, isPading } = useTask({
-    id: idTask,
-    content: children,
-    completed,
-  });
   return (
     <div
       className={twMerge(taskVariants({ background }), className)}
@@ -48,13 +48,18 @@ function Task({
     >
       <CheckBox
         onClick={handleCompleted}
-        completed={task.completed}
+        completed={completed}
         className="cursor-pointer"
+        disable={isPading}
       />
       <Text as="p" className="px-4 w-full" font="inter">
-        {task.content}
+        {children}
       </Text>
-      <XIcon className="cursor-pointer" />
+      <XIcon
+        disable={isPading}
+        className="cursor-pointer"
+        onClick={handleDelete}
+      />
     </div>
   );
 }

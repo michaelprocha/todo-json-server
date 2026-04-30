@@ -1,19 +1,19 @@
 {
   "tasks": [
     {
-      "content": "teste1Edit",
-      "completed": false,
-      "id": "9H00SDDnBlg"
+      "content": "teste",
+      "completed": true,
+      "id": "6h3_dryMask"
     },
     {
       "content": "teste2",
       "completed": false,
-      "id": "aOyfKeUSXZc"
+      "id": "6kRSxOyvc3M"
     },
     {
       "content": "teste3",
-      "completed": true,
-      "id": "krblB9fsBj4"
+      "completed": false,
+      "id": "oKpYu14IaNg"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -8,6 +8,7 @@
     --color-blue-dark: #0f172a;
     --color-blue-light: #334155;
     --color-blue: #3b82f6;
+    --color-error: #FF0000;
 
     --font-*: initial;
     --font-roboto: "Roboto Variable", sans-serif;
