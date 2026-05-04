@@ -1,4 +1,10 @@
 {
-  "tasks": [],
+  "tasks": [
+    {
+      "content": "teste 1",
+      "completed": false,
+      "id": "iB235qkO9OU"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

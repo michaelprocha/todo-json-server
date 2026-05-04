@@ -22,21 +22,26 @@ function Tasks({
     <div
       className={`flex flex-col gap-3 ${error.error || isPading ? "pb-0" : "pb-15"}`}
     >
-      {tasks.map((task, indexTask) => {
-        const { id, content, completed } = task;
-        return (
-          <Task
-            isPading={isPading}
-            idTask={id}
-            completed={completed}
-            key={`${content}-${indexTask}`}
-            handleDelete={() => deleteTask(id)}
-            handleCompleted={() => setStatusTask(id, !completed)}
-          >
-            {content}
-          </Task>
-        );
-      })}
+      {tasks.length === 0 ?
+        <Text as="p" className="text-center">
+          Não há tarefas!
+        </Text>
+      : tasks.map((task, indexTask) => {
+          const { id, content, completed } = task;
+          return (
+            <Task
+              isPading={isPading}
+              idTask={id}
+              completed={completed}
+              key={`${content}-${indexTask}`}
+              handleDelete={() => deleteTask(id)}
+              handleCompleted={() => setStatusTask(id, !completed)}
+            >
+              {content}
+            </Task>
+          );
+        })
+      }
       {error.error && !isPading ?
         <div className="bg-trasparent flex items-center justify-center h-12">
           <Text size={"base"} className="text-error" weight="bold" font="inter">
