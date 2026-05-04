@@ -1,73 +1,76 @@
-# React + TypeScript + Vite
+# Todo Json-server
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple task management website where users can create tasks, mark them as complete or incomplete, and delete them. The application also displays the total number of incomplete tasks, helping users keep track of their progress.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📷 Screenshots
 
-## React Compiler
+### Desktop
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+![screenshot-desktop](screenshots/screenTodo.png)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Create new tasks
+- Mark tasks as complete or incomplete
+- Delete tasks
+- Display the number of incomplete tasks
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Technologies
+
+- React
+
+- TypeScript
+
+- TailwindCSS
+
+- Taiwind Variants
+
+- Tailwind Merge
+
+- ESLint
+
+- Prettier
+
+- Vite
+
+---
+
+## 📦 How to use
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/michaelprocha/todo-json-server
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Dowloand [NodeJS](https://nodejs.org/en/download).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+3. Install dependencies:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+4. Run locally
+
+```bash
+npm run dev
+```
+
+---
+
+## 👨‍💻 Author
+
+Made by [Michael Rocha](https://github.com/michaelprocha)
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License. See the LICENSE file for more details.
