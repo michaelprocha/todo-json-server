@@ -1,16 +1,17 @@
 import Header from "./components/layouts/Header";
+import Main from "./components/layouts/Main";
 import Fotter from "./components/layouts/Fotter";
-import Tasks from "./components/layouts/Tasks";
+import TasksProvider from "./provider/TasksProvider";
 
 function App() {
   return (
-    <div className="bg-blue-background min-h-dvh flex flex-col items-center gap-10 justify-center py-8">
-      <Header />
-      <main className="w-md">
-        <Tasks />
-      </main>
-      <Fotter />
-    </div>
+    <TasksProvider>
+      <div className="bg-blue-background min-h-dvh flex flex-col items-center gap-10 justify-center py-8">
+        <Header />
+        <Main />
+        <Fotter />
+      </div>
+    </TasksProvider>
   );
 }
 

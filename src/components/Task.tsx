@@ -1,9 +1,9 @@
 import type { ComponentProps } from "react";
 import { twMerge } from "tailwind-merge";
 import { tv, type VariantProps } from "tailwind-variants";
-import CheckBox from "./CheckBox";
+import CheckBox from "./ui/CheckBox";
 import XIcon from "./icons/XIcon";
-import Text from "./Text";
+import Text from "./ui/Text";
 
 const taskVariants = tv({
   base: `min-h-13 w-full flex items-center rounded-xl px-4`,

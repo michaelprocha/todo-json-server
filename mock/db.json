@@ -1,20 +1,4 @@
 {
-  "tasks": [
-    {
-      "content": "teste",
-      "completed": true,
-      "id": "6h3_dryMask"
-    },
-    {
-      "content": "teste2",
-      "completed": false,
-      "id": "6kRSxOyvc3M"
-    },
-    {
-      "content": "teste3",
-      "completed": false,
-      "id": "oKpYu14IaNg"
-    }
-  ],
+  "tasks": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

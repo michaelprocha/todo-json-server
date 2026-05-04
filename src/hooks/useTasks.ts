@@ -1,13 +1,24 @@
-import { useState, useEffect } from "react";
-import type { Task, Error } from "../types/task.types";
+import { useEffect } from "react";
+import { useContext } from "react";
+import { TasksContext } from "../context/TasksContext";
 
 export default function useTasks() {
-  const [tasks, setTasks] = useState<Task[]>([]);
-  const [error, setError] = useState<Error>({
-    error: false,
-    errorMessage: null,
-  });
-  const [isPading, setIsPading] = useState<boolean>(false);
+  const tasksContext = useContext(TasksContext);
+
+  if (!tasksContext) {
+    throw new Error("useTasks deve ser usado dentro de um TasksProvider");
+  }
+
+  const {
+    tasks,
+    setTasks,
+    tasksToDo,
+    setTasksToDo,
+    error,
+    setError,
+    isPading,
+    setIsPading,
+  } = tasksContext;
 
   const URL = "http://localhost:3000/tasks/";
 
@@ -28,6 +39,13 @@ export default function useTasks() {
       }
     })();
   }, []);
+
+  useEffect(() => {
+    function updateTasksToDo() {
+      setTasksToDo(tasks.filter((item) => item.completed === false).length);
+    }
+    updateTasksToDo();
+  }, [tasks]);
 
   async function addTask(content: string) {
     setIsPading(true);
@@ -92,6 +110,7 @@ export default function useTasks() {
 
   return {
     tasks,
+    tasksToDo,
     error,
     isPading,
     setStatusTask,

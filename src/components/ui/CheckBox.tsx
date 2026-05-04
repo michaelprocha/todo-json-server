@@ -1,7 +1,7 @@
 import { type ComponentProps } from "react";
 import { twMerge } from "tailwind-merge";
 import { tv, type VariantProps } from "tailwind-variants";
-import CheckIcon from "./icons/CheckIcon";
+import CheckIcon from "../icons/CheckIcon";
 
 const checkBoxVariants = tv({
   base: `rounded-sm flex items-center justify-center border-4`,
