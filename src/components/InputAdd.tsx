@@ -1,6 +1,6 @@
 import AddButton from "./ui/AddButton";
 import InputText from "./ui/InputText";
-import type { ComponentProps, Dispatch } from "react";
+import { type ComponentProps, type Dispatch } from "react";
 
 type InputAddProps = Omit<ComponentProps<"input">, "height" | "color"> & {
   inputColor?: ComponentProps<typeof InputText>["color"];
@@ -55,7 +55,10 @@ function InputAdd({
         iconSize={iconSize}
         iconColor={iconColor}
         className={addClassName}
-        onClick={handleAdd}
+        onClick={() => {
+          handleAdd();
+          setInputValue("");
+        }}
         disable={isPading}
       />
     </InputText>

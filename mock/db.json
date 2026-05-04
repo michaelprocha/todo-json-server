@@ -4,6 +4,11 @@
       "content": "teste 1",
       "completed": false,
       "id": "iB235qkO9OU"
+    },
+    {
+      "content": "teste 2",
+      "completed": false,
+      "id": "srZO_h7BJl8"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
