@@ -24,6 +24,31 @@
       "content": "teste 5",
       "completed": false,
       "id": "zHMugZ6"
+    },
+    {
+      "content": "New task",
+      "completed": false,
+      "id": "3W5v9vk"
+    },
+    {
+      "content": "New task",
+      "completed": false,
+      "id": "za5B0pE"
+    },
+    {
+      "content": "New task",
+      "completed": false,
+      "id": "UGIELg6"
+    },
+    {
+      "content": "New task",
+      "completed": false,
+      "id": "1R3DLQW"
+    },
+    {
+      "content": "New task",
+      "completed": false,
+      "id": "IrLfk88"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -14,5 +14,8 @@ export default defineConfig({
   test: {
     environment: "jsdom", // 👈 Adicione isso
     globals: true, // Opcional: permite usar 'describe', 'it', etc sem importar
+    typecheck: {
+      enabled: true,
+    },
   },
 });
