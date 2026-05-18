@@ -9,7 +9,7 @@ describe("useTasks", () => {
     vi.clearAllMocks();
   });
 
-  it("Cheking inital values", async () => {
+  it("Checking initial values", async () => {
     const fetchMock = vi.fn().mockResolvedValue({
       ok: true,
       json: async () => [],
@@ -43,9 +43,7 @@ describe("useTasks", () => {
 
     await waitFor(() => expect(result.current.isPading).toBe(false));
 
-    await act(async () => {
-      await result.current.addTask("New task");
-    });
+    await act(() => result.current.addTask("New task"));
 
     await waitFor(() => expect(result.current.isPading).toBe(false));
 
@@ -82,9 +80,9 @@ describe("useTasks", () => {
 
     const { result } = renderHook(() => useTasks());
 
-    waitFor(() => expect(result.current.isPading).toBe(false));
+    await waitFor(() => expect(result.current.isPading).toBe(false));
 
-    await waitFor(async () => await result.current.addTask("New task"));
+    await act(() => result.current.addTask("New task"));
 
     await waitFor(() => expect(result.current.isPading).toBe(false));
 
@@ -102,10 +100,55 @@ describe("useTasks", () => {
       id: string;
     }>();
 
-    await waitFor(async () => await result.current.deleteTask("123"));
+    await act(() => result.current.deleteTask("123"));
 
     await waitFor(() => expect(result.current.isPading).toBe(false));
 
     expect(result.current.tasks).toHaveLength(0);
+  });
+
+  it("Set status task", async () => {
+    const fetchMock = vi
+      .fn()
+      .mockResolvedValueOnce({
+        ok: true,
+        json: async () => [],
+      } as Response)
+      .mockResolvedValueOnce({
+        ok: true,
+        json: async () => MOCK_TASK,
+      } as Response)
+      .mockResolvedValueOnce({
+        ok: true,
+      } as Response);
+
+    vi.stubGlobal("fetch", fetchMock);
+
+    const { result } = renderHook(() => useTasks());
+
+    expect(result.current.isPading).toBe(true);
+
+    await waitFor(() => expect(result.current.isPading).toBe(false));
+
+    expect(result.current.tasks).toHaveLength(0);
+
+    await act(() => result.current.addTask("New task"));
+
+    await waitFor(() => expect(result.current.isPading).toBe(false));
+
+    await act(() => result.current.setStatusTask("123", true));
+
+    await waitFor(() => expect(result.current.isPading).toBe(false));
+
+    expectTypeOf(result.current.tasks[0]).toMatchObjectType<{
+      id: string;
+      content: string;
+      completed: boolean;
+    }>();
+    expect(result.current.tasks[0]).toMatchObject({
+      id: "123",
+      content: "New task",
+      completed: true,
+    });
   });
 });
