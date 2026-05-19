@@ -136,9 +136,13 @@ describe("useTasks", () => {
 
     await waitFor(() => expect(result.current.isPading).toBe(false));
 
+    expect(result.current.tasksToDo).toBe(1);
+
     await act(() => result.current.setStatusTask("123", true));
 
     await waitFor(() => expect(result.current.isPading).toBe(false));
+
+    expect(result.current.tasksToDo).toBe(0);
 
     expectTypeOf(result.current.tasks[0]).toMatchObjectType<{
       id: string;
@@ -150,5 +154,21 @@ describe("useTasks", () => {
       content: "New task",
       completed: true,
     });
+  });
+
+  it("test erro task", async () => {
+    const fetchMock = vi.fn().mockResolvedValueOnce({
+      ok: false,
+    } as Response);
+
+    vi.stubGlobal("fetch", fetchMock);
+
+    const { result } = renderHook(() => useTasks());
+
+    expect(result.current.isPading).toBe(true);
+
+    await waitFor(() => expect(result.current.isPading).toBe(false));
+
+    expect(result.current.error.error).toBe(true);
   });
 });
