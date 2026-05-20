@@ -18,4 +18,5 @@ const customRenderHook = <TProps, TResult>(
 };
 
 export * from "@testing-library/react";
+export * from "@testing-library/user-event";
 export { customRenderHook as renderHook };

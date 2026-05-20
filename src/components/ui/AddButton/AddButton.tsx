@@ -1,5 +1,5 @@
 import { tv, type VariantProps } from "tailwind-variants";
-import PlusIcon from "../icons/PlusIcon";
+import PlusIcon from "../../icons/PlusIcon";
 import type { ComponentProps } from "react";
 import { twMerge } from "tailwind-merge";
 

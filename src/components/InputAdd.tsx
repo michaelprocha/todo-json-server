@@ -1,4 +1,4 @@
-import AddButton from "./ui/AddButton";
+import AddButton from "./ui/AddButton/AddButton";
 import InputText from "./ui/InputText";
 import { type ComponentProps, type Dispatch } from "react";
 
