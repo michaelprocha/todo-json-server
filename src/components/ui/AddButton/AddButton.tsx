@@ -45,6 +45,7 @@ function AddButton({
   return (
     <button
       className={twMerge(addButtonVariant({ color, size, disable }), className)}
+      disabled={disable}
       {...props}
     >
       <PlusIcon color={iconColor} size={iconSize} />

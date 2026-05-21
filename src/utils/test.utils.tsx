@@ -19,4 +19,5 @@ const customRenderHook = <TProps, TResult>(
 
 export * from "@testing-library/react";
 export * from "@testing-library/user-event";
+export * from "@testing-library/jest-dom/vitest";
 export { customRenderHook as renderHook };
