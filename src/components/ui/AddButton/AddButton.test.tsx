@@ -34,4 +34,14 @@ describe("component ui AddButton.tsx", () => {
 
     expect(button).toBeDisabled();
   });
+
+  it("Cheking if button get className", () => {
+    const className = `text-error m-5`;
+
+    render(<AddButton className={className} />);
+
+    const button = screen.getByRole("button");
+
+    expect(button).toHaveClass("text-error m-5");
+  });
 });
