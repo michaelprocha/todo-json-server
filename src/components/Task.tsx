@@ -1,7 +1,7 @@
 import type { ComponentProps } from "react";
 import { twMerge } from "tailwind-merge";
 import { tv, type VariantProps } from "tailwind-variants";
-import CheckBox from "./ui/CheckBox";
+import CheckBox from "./ui/CheckBox/CheckBox";
 import XIcon from "./icons/XIcon";
 import Text from "./ui/Text";
 
