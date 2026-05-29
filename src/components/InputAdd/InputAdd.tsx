@@ -1,5 +1,5 @@
-import AddButton from "./ui/AddButton/AddButton";
-import InputText from "./ui/InputText";
+import AddButton from "../ui/AddButton/AddButton";
+import InputText from "../ui/InputText";
 import { type ComponentProps, type Dispatch } from "react";
 
 type InputAddProps = Omit<ComponentProps<"input">, "height" | "color"> & {

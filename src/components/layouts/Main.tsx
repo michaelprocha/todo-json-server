@@ -1,4 +1,4 @@
-import InputAdd from "../InputAdd";
+import InputAdd from "../InputAdd/InputAdd";
 import Tasks from "../Tasks";
 import useTasks from "../../hooks/useTasks";
 import { useState } from "react";
