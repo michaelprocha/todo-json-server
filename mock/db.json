@@ -2,7 +2,7 @@
   "tasks": [
     {
       "content": "teste 1",
-      "completed": false,
+      "completed": true,
       "id": "iB235qkO9OU"
     },
     {
@@ -12,43 +12,18 @@
     },
     {
       "content": "teste 3",
-      "completed": true,
+      "completed": false,
       "id": "N8g18tN"
     },
     {
       "content": "teste 4",
       "completed": false,
-      "id": "lN-TRx6"
+      "id": "gqNix0p"
     },
     {
       "content": "teste 5",
       "completed": false,
-      "id": "zHMugZ6"
-    },
-    {
-      "content": "New task",
-      "completed": false,
-      "id": "3W5v9vk"
-    },
-    {
-      "content": "New task",
-      "completed": false,
-      "id": "za5B0pE"
-    },
-    {
-      "content": "New task",
-      "completed": false,
-      "id": "UGIELg6"
-    },
-    {
-      "content": "New task",
-      "completed": false,
-      "id": "1R3DLQW"
-    },
-    {
-      "content": "New task",
-      "completed": false,
-      "id": "IrLfk88"
+      "id": "p33cENU"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

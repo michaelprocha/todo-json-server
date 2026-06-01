@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
     watch: {
-      ignored: ["**/db.json"],
+      ignored: ["**/db.json", "**/test"],
     },
   },
   test: {
@@ -17,5 +17,6 @@ export default defineConfig({
     typecheck: {
       enabled: true,
     },
+    exclude: ["**/test"],
   },
 });
