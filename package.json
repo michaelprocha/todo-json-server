@@ -11,7 +11,7 @@
     "server": "npx json-server ./mock/db.json",
     "server-delay": "npx json-server --watch ./mock/db.json --delay 3000",
     "test": "npx vitest",
-    "playwright": "npx playwright test src/test/app.spec.ts",
+    "playwright": "npx playwright test src/test/app.spec.ts --workers=1",
     "playwright report": "npx playwright show-report ./src/test/",
     "playwright ui": "npx playwright test ./src/test/ --ui"
   },
