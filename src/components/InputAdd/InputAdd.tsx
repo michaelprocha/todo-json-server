@@ -55,6 +55,7 @@ function InputAdd({
         iconSize={iconSize}
         iconColor={iconColor}
         className={addClassName}
+        aria-label="Adicionar tarefa"
         onClick={() => {
           handleAdd();
           setInputValue("");

@@ -1,7 +1,19 @@
+/// <reference types="node" />
+
 import { test, expect } from "@playwright/test";
+import { writeFile } from "node:fs/promises";
+
+const waitFunction = async (time: number) =>
+  new Promise((resolve) => setTimeout(resolve, time));
 
 test.describe("home page", () => {
   test.beforeEach(async ({ page }) => {
+    await writeFile("./mock/db.json", JSON.stringify({ tasks: [] }), {
+      flag: "w",
+    });
+
+    await waitFunction(150);
+
     await page.goto("http://localhost:5173/");
   });
 
@@ -22,10 +34,15 @@ test.describe("home page", () => {
   });
 
   test("add new task", async ({ page }) => {
+    const textTask = `Task-${Date.now()}`;
+
     const input = page.getByRole("textbox");
-    await input.fill("task123");
-    const addButton = page.getByRole("button");
+    await input.fill(textTask);
+
+    const addButton = page.getByRole("button", { name: "Adicionar tarefa" });
     await addButton.click();
-    await expect(page.getByText("task123")).toBeVisible();
+
+    const nameTask = page.getByText(textTask);
+    await expect(nameTask).toBeVisible();
   });
 });
