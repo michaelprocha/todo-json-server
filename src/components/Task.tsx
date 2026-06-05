@@ -59,6 +59,8 @@ function Task({
         disable={isPading}
         className="cursor-pointer"
         onClick={handleDelete}
+        role="img"
+        aria-label="Deletar tarefa"
       />
     </div>
   );

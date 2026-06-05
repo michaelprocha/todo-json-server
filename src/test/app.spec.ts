@@ -7,12 +7,21 @@ const waitFunction = async (time: number) =>
   new Promise((resolve) => setTimeout(resolve, time));
 
 test.describe("home page", () => {
-  test.beforeEach(async ({ page }) => {
-    await writeFile("./mock/db.json", JSON.stringify({ tasks: [] }), {
-      flag: "w",
-    });
+  test.describe.configure({ mode: "serial" });
 
-    await waitFunction(150);
+  test.beforeEach(async ({ page }) => {
+    await writeFile(
+      "./mock/db.json",
+      JSON.stringify({
+        tasks: [],
+        $schema: "./node_modules/json-server/schema.json",
+      }),
+      {
+        flag: "w",
+      },
+    );
+
+    await waitFunction(500);
 
     await page.goto("http://localhost:5173/");
   });
@@ -44,5 +53,25 @@ test.describe("home page", () => {
 
     const nameTask = page.getByText(textTask);
     await expect(nameTask).toBeVisible();
+  });
+
+  test("Deleting task", async ({ page }) => {
+    const textTask = `Task-${Date.now()}`;
+
+    const input = page.getByRole("textbox");
+    await input.fill(textTask);
+
+    const addButton = page.getByRole("button", { name: "Adicionar tarefa" });
+    await addButton.click();
+
+    const nameTask = page.getByText(textTask);
+    await expect(nameTask).toBeVisible();
+
+    await expect(page.getByText("Carregando...")).not.toBeVisible();
+
+    const xIcon = page.getByRole("img", { name: "Deletar tarefa" });
+    await xIcon.click();
+
+    await expect(nameTask).not.toBeVisible();
   });
 });

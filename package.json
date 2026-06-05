@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "server": "npx json-server ./mock/db.json",
+    "server": "npx json-server ./mock/db.json --watch",
     "server-delay": "npx json-server --watch ./mock/db.json --delay 3000",
     "test": "npx vitest",
     "playwright": "npx playwright test src/test/app.spec.ts --workers=1",
